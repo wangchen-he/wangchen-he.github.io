@@ -71,6 +71,101 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-零基础开始搭建自己的个人博客（hexo博客框架）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/02/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2021-08-02T02:50:57.674Z" itemprop="datePublished">2021-08-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/02/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%EF%BC%89/">零基础开始搭建自己的个人博客（hexo博客框架）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="一、安装node-js"><a href="#一、安装node-js" class="headerlink" title="一、安装node.js"></a>一、安装node.js</h2><p>​             node.js的下载安装地址：<a target="_blank" rel="noopener" href="https://nodejs.org/">node-v14.17.4-x64.msi</a>   <strong>LTS为长期稳定版</strong></p>
+<p>​             安装步骤：不停的下一步就完事了</p>
+<p>​             配置node.js的环境变量  （将node.js的安装路径配置进path变量里面  例：D:\nodejs\）</p>
+<p>​             检查安装成功否： windows命令行输入 npm -v</p>
+<h2 id="二、淘宝镜像的下载和使用"><a href="#二、淘宝镜像的下载和使用" class="headerlink" title="二、淘宝镜像的下载和使用"></a>二、淘宝镜像的下载和使用</h2><p>​       <strong>npm（node package manager）</strong>：nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）  npm是可以理解为Node.js的一个安装命令，使用它下载的内容是因为它请求的不是国内的镜像进行下载，直接请求国外的官网下载对应包，如果没有开启VPN下载比较慢。那我们怎么办呢？这里我们可以使用国内镜像(淘宝镜像<strong>cnpm</strong>)。</p>
+<p>​      cnpm的下载命令：<code>npm install -g cnpm -registry=https:*//registry.npm.taobao.org</code></p>
+<p>​      检查安装是否成功：cnpm -v</p>
+<h2 id="三、安装hexo博客框架"><a href="#三、安装hexo博客框架" class="headerlink" title="三、安装hexo博客框架"></a>三、安装hexo博客框架</h2><p>​      安装命令:  <code>cnpm </code> install  -g  hexo-cli</p>
+<p>​      检查安装是否成功：hexo -v</p>
+<p>​      //使用 npm或者cnpm下载的插件都在这样类似的一个目录下：<code>C:\\Users\\王山鹤\\AppData\\Roaming\\npm</code></p>
+<h2 id="四、下载GIT"><a href="#四、下载GIT" class="headerlink" title="四、下载GIT"></a>四、下载GIT</h2><p>​      后面的搭建过程需要git的支持。</p>
+<p>​      GIT的下载地址:   <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git-2.32.0.2-64-bit.exe</a>  (国外的网站，访问速度较慢)。</p>
+<p>​      安装和配置自行搜索。网上一大堆。</p>
+<p>​      ==重点：==建议安装较为新的版本，不然后面的搭建过程可能会出现版本不兼容的情况。我个人卡了半天搜索了很久才得以解决。</p>
+<h2 id="五、使用hexo框架正式搭建博客"><a href="#五、使用hexo框架正式搭建博客" class="headerlink" title="五、使用hexo框架正式搭建博客"></a>五、使用hexo框架正式搭建博客</h2><ol>
+<li>自己找一个磁盘新建一个文件夹（blog）之后如果搭建出问题直接干掉这个文件夹然后重新搭建就完事了。</li>
+<li>在命令行把工作路径切换到上面的blog文件夹。</li>
+<li>在命令行敲上<code>hexo init</code> 命令。初始化一个博客。（如果没有下载GIT会出错）</li>
+<li>初始化完成之后使用<code>hexo s</code>命令启动博客。</li>
+<li>启动之后，复制<code>Hexo is running at http://localhost:4000 </code>中的路径。该路径就是你的博客访问地址。</li>
+<li>新建一篇博文  <code>hexo n  &quot;博文名称&quot;</code></li>
+<li>清理一下 <code>hexo clean</code>  清除缓存文件 db.json 和已生成的静态文件 public 。</li>
+<li>再生成一下 <code>hexo g</code>    生成网站静态文件到默认设置的 public 文件夹。</li>
+<li>登录第五步的网站来查看自己生成的博文。</li>
+</ol>
+<h2 id="六、将博客部署到远端"><a href="#六、将博客部署到远端" class="headerlink" title="六、将博客部署到远端"></a>六、将博客部署到远端</h2><p>​     注：hexo搭建的是静态博客系统，只能自己访问，要想被别人也访问就需要部署到远端。推荐免费的github</p>
+<p>步骤：</p>
+<ol>
+<li><p>首先你需要自己注册一个github账号。在github上面创建一个远程仓库。 </p>
+<p>注：用户部署的个人博客的github仓库的名字必须符合特定要求才行。格式为：个人github账号名称.github.io</p>
+<p>注：后面只需要在浏览器地址栏输入上述格式名称就可以进行访问。</p>
+</li>
+<li><p>在blog目录下安装一个git部署的插件 安装命令<code>cnpm install --save hexo-deployer-git</code></p>
+<p>注：忽略安装过程的warning。</p>
+</li>
+<li><p>配置bog目录下的_config.yml文件</p>
+<p> 在文件的末尾deploy下面添加：</p>
+<p>  type:  ‘git’ （注意输入为引文 “ ` ” 且有空格）<br>  repo:  <a target="_blank" rel="noopener" href="https://github.com/wangchen-he/wangchen-he.github.io.git%EF%BC%88%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%EF%BC%89">https://github.com/wangchen-he/wangchen-he.github.io.git（远程仓库地址）</a><br>  email:  <a href="mailto:&#x32;&#52;&#x35;&#56;&#54;&#x35;&#51;&#x39;&#57;&#x32;&#x40;&#113;&#x71;&#46;&#99;&#111;&#109;">&#x32;&#52;&#x35;&#56;&#54;&#x35;&#51;&#x39;&#57;&#x32;&#x40;&#113;&#x71;&#46;&#99;&#111;&#109;</a>（github的账户绑定邮箱）<br>  name:  wangchen-he（github的账户名称）<br>  branch: master</p>
+</li>
+<li><p>使用命令<code>hexo d </code>  自动生成网站静态文件，并部署到设定的仓库。</p>
+<p> 注：这个地方如果你的git版本过低会一直报错，部署失败。</p>
+<p> 注：看stackflow的解答，似乎是因为有安全问题还是什么，于是git开发者在2.16.x版本左右的改动中不知道修改了什么地方，老版本  的git获取username会出现问题，安装最新版本再试就没问题了。</p>
+</li>
+<li><p>然后就可以在浏览器中直接访问了</p>
+<p>  注：访问地址：个人github账号名称.github.io</p>
+</li>
+</ol>
+<h2 id="八、设置博客主题"><a href="#八、设置博客主题" class="headerlink" title="八、设置博客主题"></a>八、设置博客主题</h2><p> 步骤</p>
+<ol>
+<li><p>自己在网上找自己想要的博客主题，然后下载到博客目录的themes目录下面。</p>
+</li>
+<li><p>配置bog目录下的_config.yml文件</p>
+<p>修改Extensions下面的theme: landscape，将landscape换成自己下载的主题。</p>
+</li>
+<li><p>然后 执行<code>hexo clean</code>   <code>hexo g</code>   <code>hexo s</code>  <code>hexo d</code>  就可以在远端看到了。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/02/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%EF%BC%89/" data-id="ckru2w40g0003y4ux1az66g0u" data-title="零基础开始搭建自己的个人博客（hexo博客框架）" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-typora的使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/08/01/typora%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
@@ -81,10 +176,20 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/01/typora%E7%9A%84%E4%BD%BF%E7%94%A8/">typora的使用</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="typora的使用"><a href="#typora的使用" class="headerlink" title="typora的使用"></a>typora的使用</h1><p>##一、快捷键</p>
-<h3 id="（1）对文字的特殊标注"><a href="#（1）对文字的特殊标注" class="headerlink" title="（1）对文字的特殊标注"></a>（1）对文字的特殊标注</h3><ol>
+        <hr>
+<h2 id="一、快捷键"><a href="#一、快捷键" class="headerlink" title="一、快捷键"></a>一、快捷键</h2><h3 id="（1）对文字的特殊标注"><a href="#（1）对文字的特殊标注" class="headerlink" title="（1）对文字的特殊标注"></a>（1）对文字的特殊标注</h3><ol>
 <li><p>标题        一个#键就是一级标题，一直可到六级标题（最多六个级别的标题） </p>
 </li>
 <li><p>下划线     一组<u></u>标签可以给文字添加下划线或者ctrl+u也可以添加下划线  </p>
@@ -170,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/typora%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ckru07hso0001zoux0ify5knd" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/01/typora%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ckru2w40c0002y4ux40849ldq" data-title="typora的使用" class="article-share-link">Share</a>
       
       
       
@@ -182,9 +287,9 @@
 
 
   
-    <article id="post-我的第一篇博文" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-hexo与markdown" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/08/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" class="article-date">
+    <a href="/2021/08/01/hexo%E4%B8%8Emarkdown/" class="article-date">
   <time class="dt-published" datetime="2021-08-01T09:19:55.000Z" itemprop="datePublished">2021-08-01</time>
 </a>
     
@@ -196,7 +301,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/">我的第一篇博文</a>
+      <a class="p-name article-title" href="/2021/08/01/hexo%E4%B8%8Emarkdown/">hexo与markdown</a>
     </h1>
   
 
@@ -204,11 +309,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="我是来玩的"><a href="#我是来玩的" class="headerlink" title="我是来玩的"></a>我是来玩的</h1>
+        <h2 id="一、一级标题在hexo不显示问题"><a href="#一、一级标题在hexo不显示问题" class="headerlink" title="一、一级标题在hexo不显示问题"></a>一、一级标题在hexo不显示问题</h2><p>​          需要使用  title: 标题名  在markdown文档的最上方</p>
+<h2 id="二、个别子标题显示格式不正常的解决办法"><a href="#二、个别子标题显示格式不正常的解决办法" class="headerlink" title="二、个别子标题显示格式不正常的解决办法"></a>二、个别子标题显示格式不正常的解决办法</h2><p>​          在使用#（1-6）时需要加空格。否则hexo有时无法识别标题。</p>
+<h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/" data-id="ckru07hsr0002zouxb0mh79j4" data-title="我的第一篇博文" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/01/hexo%E4%B8%8Emarkdown/" data-id="ckru2w40a0001y4uxfbn0hf8d" data-title="hexo与markdown" class="article-share-link">Share</a>
       
       
       
@@ -259,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/hello-world/" data-id="ckru07hsj0000zoux2cdramor" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/01/hello-world/" data-id="ckru2w4050000y4ux63oq4ilo" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -302,11 +409,15 @@
       <ul>
         
           <li>
-            <a href="/2021/08/01/typora%E7%9A%84%E4%BD%BF%E7%94%A8/">(no title)</a>
+            <a href="/2021/08/02/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%EF%BC%89/">零基础开始搭建自己的个人博客（hexo博客框架）</a>
           </li>
         
           <li>
-            <a href="/2021/08/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/">我的第一篇博文</a>
+            <a href="/2021/08/01/typora%E7%9A%84%E4%BD%BF%E7%94%A8/">typora的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/01/hexo%E4%B8%8Emarkdown/">hexo与markdown</a>
           </li>
         
           <li>
