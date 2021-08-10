@@ -81,10 +81,19 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/10/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/">MySQL数据库基础</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="title-MySQL数据库"><a href="#title-MySQL数据库" class="headerlink" title="  title:MySQL数据库"></a>  title:MySQL数据库</h2><h2 id="一、基础概念"><a href="#一、基础概念" class="headerlink" title="一、基础概念"></a>一、基础概念</h2><h3 id="数据库的概念"><a href="#数据库的概念" class="headerlink" title="数据库的概念"></a>数据库的概念</h3><ol>
+        <h2 id="一、基础概念"><a href="#一、基础概念" class="headerlink" title="一、基础概念"></a>一、基础概念</h2><h3 id="数据库的概念"><a href="#数据库的概念" class="headerlink" title="数据库的概念"></a>数据库的概念</h3><ol>
 <li>DB  数据库（database）：存储数据的“仓库”。他保存了一系列有组织的数据。</li>
 <li>DBMS 数据库管理系统（Database Manegement System）：==数据库==是通过DBMS创建和操作的容器。常见的数据库管理系统：MySQL 、Oracle、DB2、SqlServlet。</li>
 <li>SQL 结构化查询语言（Structure Query Language)：专门用来与数据库通信的语言。几乎所有的DBMS都支持SQL。</li>
@@ -178,8 +187,7 @@
 </li>
 </ol>
 <h3 id="（2）数据查询"><a href="#（2）数据查询" class="headerlink" title="（2）数据查询"></a>（2）数据查询</h3><h4 id="SELECT语句的执行顺序："><a href="#SELECT语句的执行顺序：" class="headerlink" title="SELECT语句的执行顺序："></a>SELECT语句的执行顺序：</h4><p>1、FORM: 对FROM左边的表和右边的表计算笛卡尔积，产生虚表VT1。<br>2、ON: 对虚表VT1进行ON过滤，只有那些符合<join-condition>的行才会被记录在虚表VT2中。<br>3、JOIN： 如果指定了OUTER JOIN（比如left join、 right join），那么保留表中未匹配的行就会作为外部行添加到虚拟表VT2中，产生虚拟表VT3。<br>4、WHERE： 对虚拟表VT3进行WHERE条件过滤。只有符合<where-condition>的记录才会被插入到虚拟表VT4中。<br>5、GROUP BY: 根据group by子句中的列，对VT4中的记录进行分组操作，产生VT5。<br>6、HAVING： 对虚拟表VT5应用having过滤，只有符合<having-condition>的记录才会被 插入到虚拟表VT6中。<br>7、SELECT： 执行select操作，选择指定的列，插入到虚拟表VT7中。<br>8、DISTINCT： 对VT7中的记录进行去重。产生虚拟表VT8.<br>9、ORDER BY: 将虚拟表VT8中的记录按照<order_by_list>进行排序操作，产生虚拟表VT9.<br>10、LIMIT：取出指定行的记录，产生虚拟表VT10, 并将结果返回。</p>
-<p>####基础查询</p>
-<ul>
+<h4 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h4><ul>
 <li><p> 语法：select 查询列表  from 表名；</p>
 </li>
 <li><p>特点：1、查询列表可以是：表中字段、常量值、表达式、函数（查询寻对象为函数时，相当于返回函数的执行结果）</p>
@@ -1280,7 +1288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/10/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" data-id="cks5tc0zn0004o0uxh8nkfc20" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/10/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" data-id="cks5tupmi0004lkuxgynq2hyx" data-title="MySQL数据库基础" class="article-share-link">Share</a>
       
       
       
@@ -1351,7 +1359,7 @@
 </li>
 <li><p>配置bog目录下的_config.yml文件</p>
 <p> 在文件的末尾deploy下面添加：</p>
-<p>  type:  ‘git’ （注意输入为引文 “ ` ” 且有空格）<br>  repo:  <a target="_blank" rel="noopener" href="https://github.com/wangchen-he/wangchen-he.github.io.git%EF%BC%88%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%EF%BC%89">https://github.com/wangchen-he/wangchen-he.github.io.git（远程仓库地址）</a><br>  email:  <a href="mailto:&#50;&#52;&#x35;&#56;&#x36;&#53;&#51;&#x39;&#57;&#50;&#x40;&#x71;&#113;&#x2e;&#99;&#x6f;&#x6d;">&#50;&#52;&#x35;&#56;&#x36;&#53;&#51;&#x39;&#57;&#50;&#x40;&#x71;&#113;&#x2e;&#99;&#x6f;&#x6d;</a>（github的账户绑定邮箱）<br>  name:  wangchen-he（github的账户名称）<br>  branch: master</p>
+<p>  type:  ‘git’ （注意输入为引文 “ ` ” 且有空格）<br>  repo:  <a target="_blank" rel="noopener" href="https://github.com/wangchen-he/wangchen-he.github.io.git%EF%BC%88%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%EF%BC%89">https://github.com/wangchen-he/wangchen-he.github.io.git（远程仓库地址）</a><br>  email:  <a href="mailto:&#x32;&#x34;&#53;&#x38;&#54;&#x35;&#x33;&#57;&#x39;&#x32;&#x40;&#x71;&#113;&#46;&#x63;&#111;&#109;">&#x32;&#x34;&#53;&#x38;&#54;&#x35;&#x33;&#57;&#x39;&#x32;&#x40;&#x71;&#113;&#46;&#x63;&#111;&#109;</a>（github的账户绑定邮箱）<br>  name:  wangchen-he（github的账户名称）<br>  branch: master</p>
 </li>
 <li><p>使用命令<code>hexo d </code>  自动生成网站静态文件，并部署到设定的仓库。</p>
 <p> 注：这个地方如果你的git版本过低会一直报错，部署失败。</p>
@@ -1375,7 +1383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/02/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%EF%BC%89/" data-id="cks5tc0zc0002o0uxd69804rv" data-title="零基础开始搭建自己的个人博客（hexo博客框架）" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/02/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%EF%BC%89/" data-id="cks5tupm80003lkux9e2t4zku" data-title="零基础开始搭建自己的个人博客（hexo博客框架）" class="article-share-link">Share</a>
       
       
       
@@ -1496,7 +1504,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/typora%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="cks5tc0zc0003o0ux8sdb29np" data-title="typora的使用" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/01/typora%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="cks5tupm30002lkuxh1bhh3eb" data-title="typora的使用" class="article-share-link">Share</a>
       
       
       
@@ -1536,7 +1544,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/hexo%E4%B8%8Emarkdown/" data-id="cks5tc0za0001o0uxb9sz6vlc" data-title="hexo与markdown" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/01/hexo%E4%B8%8Emarkdown/" data-id="cks5tupm20001lkux8n8ebgsq" data-title="hexo与markdown" class="article-share-link">Share</a>
       
       
       
@@ -1587,7 +1595,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/hello-world/" data-id="cks5tc0z60000o0uxd0h4hn0y" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/01/hello-world/" data-id="cks5tuplx0000lkuxhh2zdb5y" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -1630,7 +1638,7 @@
       <ul>
         
           <li>
-            <a href="/2021/08/10/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/">(no title)</a>
+            <a href="/2021/08/10/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/">MySQL数据库基础</a>
           </li>
         
           <li>
